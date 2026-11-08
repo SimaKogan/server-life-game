@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game of Life</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo" aria-hidden="true"></span>Game of Life</div>
+    <div class="status" id="status" role="status">Нет соединения</div>
+  </header>
+
+  <main class="layout">
+    <section class="board-wrap">
+      <div class="board" id="board">
+        <canvas id="canvas" width="1" height="1" aria-label="Игровое поле"></canvas>
+        <div class="empty" id="empty">
+          <p>Поле пока пустое</p>
+          <p class="muted">Выберите размер и нажмите «Создать поле»</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel">
+      <div class="stats">
+        <div class="stat"><span class="label">Поколение</span><span class="value" id="s-gen">—</span></div>
+        <div class="stat"><span class="label">Живых клеток</span><span class="value" id="s-alive">—</span></div>
+        <div class="stat"><span class="label">Плотность</span><span class="value" id="s-density">—</span></div>
+      </div>
+
+      <div class="group">
+        <label for="size">Размер поля <output id="size-out">60 × 60</output></label>
+        <input id="size" type="range" min="10" max="1000" value="60">
+        <button id="init" class="btn btn-primary" type="button">Создать поле</button>
+      </div>
+
+      <div class="group">
+        <div class="row">
+          <button id="play" class="btn btn-primary" type="button" disabled>▶ Запуск</button>
+          <button id="step" class="btn" type="button" disabled>Шаг</button>
+        </div>
+        <label for="speed">Скорость <output id="speed-out">5 шаг/с</output></label>
+        <input id="speed" type="range" min="1" max="30" value="5">
+      </div>
+
+      <div class="group">
+        <button id="reset" class="btn btn-ghost" type="button" disabled>Удалить сессию</button>
+      </div>
+
+      <div class="alert" id="error" role="alert" hidden></div>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

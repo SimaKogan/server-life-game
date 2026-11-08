@@ -1,0 +1,37 @@
+{
+  "name": "server-life-game",
+  "version": "1.0.0",
+  "description": "server for game of life",
+  "main": "server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node server.js",
+    "dev": "tsc && node server.js",
+    "test": "node test/life.test.js"
+  },
+  "author": "Georgy Levin",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongo": "^5.1.0",
+    "connect-redis": "^8.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "module-alias": "^2.2.3",
+    "mongodb": "^6.12.0",
+    "redis": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.3",
+    "typescript": "^5.7.2"
+  },
+  "_moduleAliases": {
+    "@routes": "src/routes",
+    "@config": "src/config",
+    "@utils": "dist/utils",
+    "@services": "dist/services"
+  }
+}
